@@ -17,6 +17,7 @@ import Pending from "./components/AdditionalPages/Pending";
 import Bookmark from "./components/Bookmark/Bookmark";
 import Write from "./components/Write/Write";
 import Share from "./components/AdditionalPages/Share";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -41,7 +42,6 @@ function App() {
 
         <Route path="*" element={<Error />} />
       </Routes>
-      {/* <Footer/> */}
     </Router>
   );
 }

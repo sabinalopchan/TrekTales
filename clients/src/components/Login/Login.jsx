@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser } from "../../apis/users";
+import * as FaIcons from "react-icons/fa";
+
 import Stack from "@mui/material/Stack";
 import LinearProgress from "@mui/material/LinearProgress";
 
@@ -54,51 +56,48 @@ function Login() {
       <div className="login-page" onClick={() => setErrorExits(false)}>
         <form className="container login-card">
           <h2 className="welcome text-center">Welcome Back</h2>
-          <p className="text-center welcome-info mt-2">
-            Glad to see you😍 Please Login
-          </p>
-          <div className="mb-3">
-            <label
-              style={{ color: " rgba(34, 34, 34, 1)" }}
-              htmlFor="exampleInputEmail1"
-              className="form-label"
-            >
-              Email address
-            </label>
-            <input
-              onChange={change}
-              name="email"
-              type="email"
-              className="form-control loginInputs"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-            <div id="emailHelp" className="form-text">
-              We'll never share your email with anyone else.
+          <p className="text-center welcome-info mt-2">Login with email</p>
+          <div className="form">
+            <div className="mb-3">
+              <label
+                style={{ color: " rgba(34, 34, 34, 1)" }}
+                htmlFor="exampleInputEmail1"
+                className="form-label"
+              >
+                Email address
+              </label>
+              <input
+                onChange={change}
+                name="email"
+                type="email"
+                className="form-control loginInputs"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+              />
             </div>
-          </div>
-          <div className="mb-3 password">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Password
-            </label>
-            <input
-              onChange={change}
-              value={userData.password}
-              name="password"
-              type={showPass ? "text" : "password"}
-              className="form-control"
-              id="exampleInputPassword"
-              aria-describedby="emailHelp"
-            />
-            <input className="mt-3 tick" type="checkbox" onClick={password} />
-            Show Password
-          </div>
-          <div
-            class="alert alert-danger"
-            style={{ display: errorExist ? "block" : "none" }}
-            role="alert"
-          >
-            {response}
+            <div className="mb-3 password">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Password
+              </label>
+              <input
+                onChange={change}
+                value={userData.password}
+                name="password"
+                type={showPass ? "text" : "password"}
+                className="form-control"
+                id="exampleInputPassword"
+                aria-describedby="emailHelp"
+              />
+              <input className="mt-3 tick" type="checkbox" onClick={password} />
+              Show Password
+            </div>
+            <div
+              class="alert alert-danger"
+              style={{ display: errorExist ? "block" : "none" }}
+              role="alert"
+            >
+              {response}
+            </div>
           </div>
           <Link style={{ display: loading ? "none" : "" }} to="/login">
             <button onClick={submit} className="login-btn mt-3">
@@ -135,4 +134,3 @@ function Login() {
 }
 
 export default Login;
-

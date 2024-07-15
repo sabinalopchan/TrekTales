@@ -161,7 +161,9 @@ function Blog() {
                   </a>
                   <div className="authorProfileInfo">
                     <a href={`/profile/${blog.authorid}`}>
-                      <p className="profile-author-name pl-1">Shakir Farhan</p>
+                      <p className="profile-author-name pl-1">
+                        {blog.authorName}
+                      </p>
                     </a>
 
                     <div className="profileMinorInfo">
